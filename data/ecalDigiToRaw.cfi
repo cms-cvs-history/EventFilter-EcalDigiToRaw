@@ -1,5 +1,5 @@
 module ecaldigitorawzerosup = EcalDigiToRaw {
-        string Label = "ecalDigis"
+        string Label = "simEcalDigis"
         string InstanceEB = "SRPebDigis"
         string InstanceEE = "SRPeeDigis"
         untracked bool WriteTCCBlock = true
@@ -8,8 +8,8 @@ module ecaldigitorawzerosup = EcalDigiToRaw {
         untracked bool debug = false
         untracked bool DoBarrel = true
         untracked bool DoEndCap = true
-        InputTag labelTT = ecalTriggerPrimitiveDigis
-        InputTag labelEBSRFlags = ecalDigis:ebSrFlags
-        InputTag labelEESRFlags = ecalDigis:eeSrFlags
+        InputTag labelTT = simEcalTriggerPrimitiveDigis
+        InputTag labelEBSRFlags = simEcalDigis:ebSrFlags
+        InputTag labelEESRFlags = simEcalDigis:eeSrFlags
 }
 
