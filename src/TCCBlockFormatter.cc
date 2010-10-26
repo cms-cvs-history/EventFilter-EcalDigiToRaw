@@ -120,6 +120,12 @@ void TCCBlockFormatter::DigiToRaw(const EcalTriggerPrimitiveDigi& trigprim,
 	int jTT = (iTT-1);
 	int irow = jTT/4 + (itcc_block-1)*(Nrows_TCC+1);
 	int ival = jTT % 4;
+
+	// RTC required TP's tp follow global phi also in EB+, thus swap them inside the single TCC 
+ 	// here you could swap ival -> 3-ival to swap phi insied EB+ supermodules  
+ 	if(28 <= iDCC && iDCC <= 45)
+ 	  {ival = 3-ival;}
+
 	FE_index += irow;
 
         if (debug_) cout << "Now add tower " << dec << iTT << " irow ival " << dec << irow << " " << dec << ival << endl;
